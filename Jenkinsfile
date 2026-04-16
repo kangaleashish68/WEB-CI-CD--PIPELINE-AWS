@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                git 'https://github.com/kangaleashish68/WEB-CI-CD--PIPELINE-AWS.git'
-            }
-        }
-
         stage('Check Files') {
             steps {
                 sh 'pwd'
