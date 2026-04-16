@@ -3,6 +3,12 @@ pipeline {
 
     stages {
 
+        stage('Clone') {
+            steps {
+                git 'https://github.com/yourusername/task-manager.git'
+            }
+        }
+
         stage('Check Files') {
             steps {
                 sh 'pwd'
