@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone') {
             steps {
-                git 'https://github.com/yourusername/task-manager.git'
+                git 'https://github.com/kangaleashish68/WEB-CI-CD--PIPELINE-AWS.git'
             }
         }
 
