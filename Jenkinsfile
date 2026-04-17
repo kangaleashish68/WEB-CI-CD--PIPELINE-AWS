@@ -10,18 +10,18 @@ pipeline {
             }
         }
 
-        stage('Build Image') {
+        stage('Build Docker Image') {
             steps {
-                sh '/usr/bin/docker build -t task-app:v1 ./app'
+                sh 'docker build -t task-app:v1 ./app'
             }
         }
 
         stage('Run Container') {
             steps {
                 sh '''
-                /usr/bin/docker stop task-container || true
-                /usr/bin/docker rm task-container || true
-                /usr/bin/docker run -d -p 3001:3000 --name task-container task-app:v1
+                docker stop task-container || true
+                docker rm task-container || true
+                docker run -d -p 3001:3000 --name task-container task-app:v1
                 '''
             }
         }
